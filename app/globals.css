@@ -16,6 +16,25 @@ body {
 
 .legend {
   text-align: left;
-  line-height: 18px;
+  line-height: 10px;
   color: #555;
+}
+
+.legendSquare {
+  width: 10px; 
+  height: 10px;
+  margin-right: 5px;
+}
+
+.legendLine {
+  width: 20px; 
+  height: 3px;
+  margin-right: 5px;
+}
+
+.legendInforLine{
+  display: flex; 
+  flex-direction: row; 
+  justify-content: flex-start; 
+  align-items: center;
 }

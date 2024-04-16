@@ -4,18 +4,16 @@ import { MapContainer, TileLayer, LayersControl, GeoJSON, LayerGroup} from "reac
 import "leaflet/dist/leaflet.css"
 import "leaflet-defaulticon-compatibility"
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css"
-import  L, {Map, latLng } from "leaflet"
+import  L, {Map, PathOptions, latLng } from "leaflet"
 import { BHSB, Hidrografia_BHSB, MataAtlantica, Solos } from "@/public/data/ShapefileData"
 import Legend from "./Legend"
 import { useState } from "react"
-import { Geometry } from "geojson"
 
 export default function MyMap(props: any) {
 
   const position = latLng([-17.899075, -41.511312]);
-  const fillBHSB = { color: 'red' }
+  const fillBHSB: PathOptions = { color: 'red', fillOpacity: 0.8 }
   const [map, setMap] = useState<Map | null>(null);
-  const [bBHSB,setBHSB] = useState<L.GeoJSON<any, Geometry> | null>(null);
   
 
   return <MapContainer center={position} zoom={14} scrollWheelZoom={true} style={{ height: "100%", width: "100%" }} ref={setMap}>
@@ -27,7 +25,7 @@ export default function MyMap(props: any) {
     <LayersControl  position="topright" collapsed={false}>
       <LayerGroup></LayerGroup>
       <LayersControl.Overlay checked name="Contorno - BH São Benedito">
-        <GeoJSON data={BHSB} pathOptions={fillBHSB} eventHandlers={{
+        <GeoJSON data={BHSB} pathOptions={fillBHSB}  eventHandlers={{
               add: (e) => {
                 const remove = false;
                 Legend({map, remove})
@@ -51,10 +49,28 @@ export default function MyMap(props: any) {
             }}></GeoJSON>
       </LayersControl.Overlay>
       <LayersControl.Overlay name="Solos">
-        <GeoJSON data={Solos}></GeoJSON>
+        <GeoJSON data={Solos} eventHandlers={{
+              add: (e) => {
+                const remove = false;
+                Legend({map, remove})
+              },
+              remove: (e) => {
+                const remove = true;
+                Legend({map, remove})
+              }
+            }}></GeoJSON>
       </LayersControl.Overlay>
       <LayersControl.Overlay name="Mata Atlântica">
-        <GeoJSON data={MataAtlantica}></GeoJSON>
+        <GeoJSON data={MataAtlantica} eventHandlers={{
+              add: (e) => {
+                const remove = false;
+                Legend({map, remove})
+              },
+              remove: (e) => {
+                const remove = true;
+                Legend({map, remove})
+              }
+            }}></GeoJSON>
       </LayersControl.Overlay>
     </LayersControl>
 
