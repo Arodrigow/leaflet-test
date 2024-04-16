@@ -3652,7 +3652,10 @@ export const MataAtlantica = {
           "nivel_3": "-",
           "nivel_4": "-",
           "shape_leng": 649.3667286849999,
-          "shape_area": 0.795584694588
+          "shape_area": 0.795584694588,
+          "fillColor": "#fdae61",
+          "fillOpacity":0.8,
+          "opacity":0.0
         },
         "geometry": {
           "type": "MultiPolygon",
@@ -17921,7 +17924,10 @@ export const MataAtlantica = {
           "nivel_3": "-",
           "nivel_4": "-",
           "shape_leng": 0.0177881972893,
-          "shape_area": 0.000006191953592
+          "shape_area": 0.000006191953592,
+          "fillColor": "#ffffbf",
+          "fillOpacity":0.8,
+          "opacity":0.0
         },
         "geometry": {
           "type": "MultiPolygon",
@@ -21541,14 +21547,17 @@ export const MataAtlantica = {
         "type": "Feature",
         "properties": {
           "gid": 33,
-          "tipo_veg": "Vegeta��o Nativa (natural, recuperada ou restaurada)",
+          "tipo_veg": "Vegetação Nativa (natural, recuperada ou restaurada)",
           "num_class": 57,
-          "nivel_1": "Floresta Atl�ntica",
+          "nivel_1": "Floresta Atlântica",
           "nivel_2": "Floresta Estacional Semidecidual",
           "nivel_3": "Submontano",
           "nivel_4": "Est�gio Inicial",
           "shape_leng": 302.400696834,
-          "shape_area": 0.164407958003
+          "shape_area": 0.164407958003,
+          "fillColor": "#1a9641",
+          "fillOpacity":0.8,
+          "opacity":0.0
         },
         "geometry": {
           "type": "MultiPolygon",
@@ -24782,12 +24791,15 @@ export const MataAtlantica = {
           "gid": 34,
           "tipo_veg": "Vegeta��o Nativa (natural, recuperada ou restaurada)",
           "num_class": 58,
-          "nivel_1": "Floresta Atl�ntica",
+          "nivel_1": "Floresta Atlântica",
           "nivel_2": "Floresta Estacional Semidecidual",
           "nivel_3": "Submontano",
           "nivel_4": "Demais Est�gios",
           "shape_leng": 583.784333558,
-          "shape_area": 0.459933738548
+          "shape_area": 0.459933738548,
+          "fillColor": "#1a9641",
+          "fillOpacity":0.8,
+          "opacity":0.0        
         },
         "geometry": {
           "type": "MultiPolygon",
@@ -30973,12 +30985,15 @@ export const MataAtlantica = {
           "gid": 35,
           "tipo_veg": "Vegeta��o Nativa (natural, recuperada ou restaurada)",
           "num_class": 59,
-          "nivel_1": "Floresta Atl�ntica",
+          "nivel_1": "Floresta Atlântica",
           "nivel_2": "Floresta Estacional Semidecidual",
           "nivel_3": "Montano",
           "nivel_4": "Est�gio Inicial",
           "shape_leng": 271.056100896,
-          "shape_area": 0.152486138299
+          "shape_area": 0.152486138299,
+          "fillColor": "#1a9641",
+          "fillOpacity":0.8,
+          "opacity":0.0
         },
         "geometry": {
           "type": "MultiPolygon",
@@ -31696,12 +31711,15 @@ export const MataAtlantica = {
           "gid": 36,
           "tipo_veg": "Vegeta��o Nativa (natural, recuperada ou restaurada)",
           "num_class": 60,
-          "nivel_1": "Floresta Atl�ntica",
+          "nivel_1": "Floresta Atlântica",
           "nivel_2": "Floresta Estacional Semidecidual",
           "nivel_3": "Montano",
           "nivel_4": "Demais Est�gios",
           "shape_leng": 415.780210539,
-          "shape_area": 0.399694662441
+          "shape_area": 0.399694662441,
+          "fillColor": "#1a9641",
+          "fillOpacity":0.8,
+          "opacity":0.0
         },
         "geometry": {
           "type": "MultiPolygon",

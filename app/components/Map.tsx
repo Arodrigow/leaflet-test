@@ -12,7 +12,7 @@ import { useState } from "react"
 export default function MyMap(props: any) {
 
   const position = latLng([-17.899075, -41.511312]);
-  const fillBHSB: PathOptions = { color: 'red', fillOpacity: 0.8 }
+  const fillBHSB: PathOptions = { color: 'red', fillOpacity: 0.8}
   const [map, setMap] = useState<Map | null>(null);
   
 
@@ -69,6 +69,14 @@ export default function MyMap(props: any) {
               remove: (e) => {
                 const remove = true;
                 Legend({map, remove})
+              }
+            }} 
+
+            style={(feature) => {
+              return {
+                fillColor: feature!.properties.fillColor,
+                fillOpacity: feature!.properties.fillOpacity,
+                opacity: feature!.properties.opacity
               }
             }}></GeoJSON>
       </LayersControl.Overlay>
