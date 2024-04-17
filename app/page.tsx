@@ -10,7 +10,7 @@ export default function Home() {
     }
   ), [])
 
-  return <main className="h-[100vh]">
+  return <main className="h-svh md:h-[100vh] ">
     <Map/>
   </main>
 }
