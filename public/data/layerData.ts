@@ -1,4 +1,4 @@
-import { sfBHSB, sfMataAtlantica, sfHidrografia_BHSB, sfSolos } from './shapefileData'
+import { sfBHSB, sfMataAtlantica, sfHidrografia_BHSB, sfSolos } from '@/public/data/shapefileData'
 
 export const BHSB = { 
     legend: [
