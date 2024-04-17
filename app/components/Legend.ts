@@ -1,59 +1,43 @@
 import { useEffect } from "react";
 import L from "leaflet";
+import { LegendProps } from "../customTypes/legendProps";
+import { getLegentTypeClass } from "../helper/getLegendTypeClass";
 
-function Legend({ map, remove }: any) {
-  const getColor = (d: number) => {
-    return d > 1000
-      ? "#800026"
-      : d > 500
-      ? "#BD0026"
-      : d > 200
-      ? "#E31A1C"
-      : d > 100
-      ? "#FC4E2A"
-      : d > 50
-      ? "#FD8D3C"
-      : d > 20
-      ? "#FEB24C"
-      : d > 10
-      ? "#FED976"
-      : "#FFEDA0";
-  };
-
-  const legend = new L.Control({ position: "bottomright" });
-  const legendHTML = 
-  "<h4>This is the legend</h4>" +
-  "<b>Lorem ipsum dolor sit amet consectetur adipiscing</b>";
+function Legend({ map, remove, legend,  legendType}: LegendProps) {
+  
+  const legendControl = new L.Control({ position: "bottomright" });
 
   if (map && !remove) {
-    legend.onAdd = () => {const div = L.DomUtil.create("div", "info legend");
-    div.id = "Teste"
-    const grades = [0, 10, 20, 50, 100, 200, 500, 1000];
-    let labels = [];
-    let from;
-    let to;
+    legendControl.onAdd = () => {
+      const div = L.DomUtil.create("div", "info legend");
+      div.id = "Teste";
+      const legendName: Array<string> = [];
+      const legendColor: Array<string> = [];
+      
+      legend.forEach((leg) => {
+        legendName.push(leg.name)
+        legendColor.push(leg.color)
+      })
+      let labels = [];
 
-    for (let i = 0; i < grades.length; i++) {
-      from = grades[i];
-      to = grades[i + 1];
+      for (let i = 0; i < legendName.length; i++) {
 
-      labels.push(  
-          '<div class="legendInforLine"><div class="legendSquare" style="background-color:'+getColor(from+1)+'"></div>' +
-          from +
-          (to ? "&ndash;" + to : "+")+'</div>'
-      );
-    }
+        labels.push(
+          '<div class="legendInforLine"><div class="'+getLegentTypeClass(legendType)+'" style="background-color:' + legendColor[i] + '"></div>' +
+          legendName[i] + '</div>'
+        );
+      }
 
-    div.innerHTML = labels.join("<br>");
-    return div;
+      div.innerHTML = labels.join("<br>");
+      return div;
     };
-    legend.addTo(map);
+    legendControl.addTo(map);
   }
   if (map && remove) {
     const element = document.getElementById("Teste");
-    if(element){
+    if (element) {
       L.DomUtil.remove(element);
-    }   
+    }
   }
 
   return null;

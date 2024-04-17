@@ -1,4 +1,4 @@
-export const BHSB = {
+export const sfBHSB = {
         "type": "FeatureCollection" as const,
         "name": "BH São Benedito.kmz",
         "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
@@ -7,7 +7,7 @@ export const BHSB = {
         ]
       }
 
-export const Hidrografia_BHSB = {
+export const sfHidrografia_BHSB = {
     "type": "FeatureCollection" as const,
     "features": [
       {
@@ -2773,7 +2773,7 @@ export const Hidrografia_BHSB = {
     ]
   }
 
-export const Solos = {
+export const sfSolos = {
     "type": "FeatureCollection" as const,
     "features": [
       {
@@ -3638,7 +3638,7 @@ export const Solos = {
     ]
   }
 
-export const MataAtlantica = {
+export const sfMataAtlantica = {
     "type": "FeatureCollection" as const,
     "features": [
       {
