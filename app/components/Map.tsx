@@ -1,5 +1,5 @@
 'use client'
-import { MapContainer, TileLayer, LayersControl, GeoJSON, LayerGroup } from "react-leaflet"
+import { MapContainer, TileLayer, LayersControl, GeoJSON, LayerGroup, ImageOverlay } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 import "leaflet-defaulticon-compatibility"
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css"
@@ -15,7 +15,7 @@ export default function MyMap(props: any) {
   const fillHidrografia: PathOptions = {color: '#2b8cbe'}
   const fillSolos:PathOptions = {color: '#8c510a', fillOpacity: 1}
   const [map, setMap] = useState<Map | null>(null);
-
+  const bounds = L.latLngBounds([[-17.93829,-41.55515], [-17.93283,-41.54949]])
 
   return <MapContainer center={position} zoom={14} scrollWheelZoom={true} style={{ height: "100%", width: "100%" }} ref={setMap}>
     <TileLayer
@@ -69,6 +69,9 @@ export default function MyMap(props: any) {
               opacity: feature!.properties.opacity
             }
           }}></GeoJSON>
+      </LayersControl.Overlay>
+      <LayersControl.Overlay name="Voo 18/04/24">
+        <ImageOverlay url="https://u.cubeupload.com/RodrigoW/outputonlinepngtools.png" bounds={bounds}></ImageOverlay>
       </LayersControl.Overlay>
     </LayersControl>
 
